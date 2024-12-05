@@ -1,10 +1,10 @@
 # data-structure  
-#这是我对数据结构的练习  
-##顺序表  
-  ###1.c是对顺序表的基础操作  
-  ###2.c与1的代码基本相同,用malloc把顺序表开辟到了堆内存中  
-##链表   
-  ###1.c头插法  
+# 这是我对数据结构的练习  
+## 顺序表  
+  ### 1.c是对顺序表的基础操作  
+  ### 2.c与1的代码基本相同,用malloc把顺序表开辟到了堆内存中  
+## 链表   
+  ### 1.c头插法  
 ```
 void insertHead(Node *L, ElemType e)
 {
@@ -15,7 +15,7 @@ void insertHead(Node *L, ElemType e)
 }
 ```
 
- ###2.c 尾插法
+ ### 2.c 尾插法
 ```
 Node * get_tail (Node *L)
 {
@@ -38,7 +38,7 @@ Node* insertTail(Node *L , ElemType e)
 }
 ```
 
-###3.c 删除数据
+### 3.c 删除数据
 
 ```
 void deliteList(Node *L , int e)
@@ -57,7 +57,7 @@ void deliteList(Node *L , int e)
 }
 ```
 
-###4.c 清空链表
+### 4.c 清空链表
 ```
 void freelist(Node *L)
 {
@@ -72,7 +72,7 @@ void freelist(Node *L)
     L -> next = NULL;
 }
 ```
-###5.c 利用快慢指针找到倒数第k个节点
+### 5.c 利用快慢指针找到倒数第k个节点
 ```
 void findNodeFS(Node* L, int k)
 {
@@ -91,7 +91,7 @@ void findNodeFS(Node* L, int k)
 }
 
 ```
-###6.c 用快慢指针找出单词的相同后缀
+### 6.c 用快慢指针找出单词的相同后缀
 ```
 Node* findIntersectionNode(Node* headA, Node* headB)
 {
@@ -142,7 +142,7 @@ Node* findIntersectionNode(Node* headA, Node* headB)
 
 }
 ```
-###7.c 利用空间换时间，删除绝对值相同的元素
+### 7.c 利用空间换时间，删除绝对值相同的元素
 ```
 void removeNode(Node* L, int n)
 {
@@ -176,7 +176,7 @@ void removeNode(Node* L, int n)
 
 }
 ```
-###8.c 反转链表
+### 8.c 反转链表
 ```
 Node* reserveList(Node* head)
 {
@@ -195,7 +195,7 @@ Node* reserveList(Node* head)
     return hd;
 }
 ```
-###9.c 快慢指针法删除中间节点
+### 9.c 快慢指针法删除中间节点
 ```
 void delMiddleNode(Node* head)
 {
@@ -255,7 +255,7 @@ void reOrderList(Node* head)
 
 }
 ```
-###11.c 判断链表是否有环,且找到环入口
+### 11.c 判断链表是否有环,且找到环入口
 ```
 Node* findBegin(Node* head)
 {
@@ -294,4 +294,4 @@ Node* findBegin(Node* head)
     return NULL;
 }
 ```
-#代码均出自b站课程https://www.bilibili.com/video/BV1tNpbekEht/?spm_id_from=333.337.search-card.all.click
+# 代码均出自b站课程https://www.bilibili.com/video/BV1tNpbekEht/?spm_id_from=333.337.search-card.all.click
