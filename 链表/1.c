@@ -3,36 +3,37 @@
 
 typedef int ElemType;
 
-typedef struct node{
+typedef struct node
+{
     ElemType data;
-    struct node* next;
-}Node;
+    struct node *next;
+} Node;
 
 Node *initList()
 {
-    Node *head = (Node*)malloc(sizeof(Node));
-    head -> data = 0;
-    head -> next = NULL;
+    Node *head = (Node *)malloc(sizeof(Node));
+    head->data = 0;
+    head->next = NULL;
     return head;
 }
 
-//头插法
+// 头插法
 void insertHead(Node *L, ElemType e)
 {
-    Node *p = (Node*)malloc(sizeof(Node));
-    p -> data =e;
-    p -> next = L ->next;
-    L -> next = p;
+    Node *p = (Node *)malloc(sizeof(Node));
+    p->data = e;
+    p->next = L->next;
+    L->next = p;
 }
 
-//遍历
+// 遍历
 void listNode(Node *L)
 {
-    Node *p = L-> next;
-    while(p != NULL)
+    Node *p = L->next;
+    while (p != NULL)
     {
-        printf("%d ",p->data);
-        p = p ->next;
+        printf("%d ", p->data);
+        p = p->next;
     }
     printf("\n");
 }
@@ -40,9 +41,9 @@ void listNode(Node *L)
 int main(void)
 {
     Node *List = initList();
-    insertHead( List , 10);
-    insertHead( List , 20);
-    insertHead( List , 30);
+    insertHead(List, 10);
+    insertHead(List, 20);
+    insertHead(List, 30);
     listNode(List);
 
     return 0;

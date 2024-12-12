@@ -1,112 +1,110 @@
-//ÕÒµ½ÏàÍ¬µÄºó×º
+// æ‰¾åˆ°ç›¸åŒçš„åç¼€
 #include <stdio.h>
 #include <malloc.h>
-//¿ìÂıÖ¸Õë ÕÒµ½µ¹ÊıµÚk¸ö½Úµã
+// å¿«æ…¢æŒ‡é’ˆ æ‰¾åˆ°å€’æ•°ç¬¬kä¸ªèŠ‚ç‚¹
 typedef char Elemtype;
 typedef struct node
 {
     Elemtype data;
-    struct node* next;
-}Node;
+    struct node *next;
+} Node;
 
-//³õÊ¼»¯
-Node* initList()
+// åˆå§‹åŒ–
+Node *initList()
 {
-    Node* head = (Node*)malloc(sizeof(Node));
-    head -> data = 0;
-    head -> next = NULL;
+    Node *head = (Node *)malloc(sizeof(Node));
+    head->data = 0;
+    head->next = NULL;
     return head;
 }
 
-//Î²²å·¨
-Node* get_tail(Node* L)
+// å°¾æ’æ³•
+Node *get_tail(Node *L)
 {
-    Node* p = L;
-    while( p -> next != NULL)
+    Node *p = L;
+    while (p->next != NULL)
     {
-        p = p-> next;
+        p = p->next;
     }
     return p;
-
 }
 
-
-Node* insertTail(Node* L , Elemtype i)
+Node *insertTail(Node *L, Elemtype i)
 {
-    Node* p = (Node*)malloc(sizeof(Node));
-    L -> next = p;
-    p -> data = i;
-    p -> next = NULL;
+    Node *p = (Node *)malloc(sizeof(Node));
+    L->next = p;
+    p->data = i;
+    p->next = NULL;
     return p;
 }
 
-//±éÀú
+// éå†
 void listNode(Node *L)
 {
-    while(L->next != NULL)
+    while (L->next != NULL)
     {
-        L = L -> next;
+        L = L->next;
         printf("%c", L->data);
     }
     printf("\n");
 }
 
-//¿ìÂıÖ¸Õë
-void findNodeFS(Node* L, int k)
+// å¿«æ…¢æŒ‡é’ˆ
+void findNodeFS(Node *L, int k)
 {
-    Node* fast = L -> next;
-    Node* slow = L -> next;
-    for(int i = 0 ; i < k ; i++)
+    Node *fast = L->next;
+    Node *slow = L->next;
+    for (int i = 0; i < k; i++)
     {
-        fast = fast -> next;
+        fast = fast->next;
     }
-    while(fast != NULL)
+    while (fast != NULL)
     {
-        fast = fast -> next;
-        slow = slow -> next;
+        fast = fast->next;
+        slow = slow->next;
     }
-    printf("µ¹ÊıµÚ%d¸ö½ÚµãÖµÎª: %d\n",k , slow -> data);
+    printf("å€’æ•°ç¬¬%dä¸ªèŠ‚ç‚¹å€¼ä¸º: %d\n", k, slow->data);
 }
 
-Node* initListWithElem(Elemtype e)
+Node *initListWithElem(Elemtype e)
 {
-    Node* node = (Node*)malloc(sizeof(Node));
-    node -> data = e;
-    node -> next = NULL;
+    Node *node = (Node *)malloc(sizeof(Node));
+    node->data = e;
+    node->next = NULL;
     return node;
 }
 
-Node* initListWithNode(Node* tail, Node* node)
+Node *initListWithNode(Node *tail, Node *node)
 {
-    tail -> next = node;
-    node -> next = NULL;
+    tail->next = node;
+    node->next = NULL;
     return node;
 }
 
-Node* findIntersectionNode(Node* headA, Node* headB)
+Node *findIntersectionNode(Node *headA, Node *headB)
 {
-    if(headA == NULL || headB == NULL)
+    if (headA == NULL || headB == NULL)
     {
         return NULL;
     }
-    Node* p = headA;
+    Node *p = headA;
     int lenA = 0;
     int lenB = 0;
-    while(p != NULL)
+    while (p != NULL)
     {
-        p = p -> next;
+        p = p->next;
         lenA++;
     }
     p = headB;
-    while(p != NULL)
+    while (p != NULL)
     {
-        p = p -> next;
+        p = p->next;
         lenB++;
     }
-    Node* fast;
-    Node* slow;
+    Node *fast;
+    Node *slow;
     int step;
-    if(lenA > lenB)
+    if (lenA > lenB)
     {
         step = lenA - lenB;
         fast = headA;
@@ -118,48 +116,47 @@ Node* findIntersectionNode(Node* headA, Node* headB)
         fast = headB;
         slow = headA;
     }
-    for(int i = 0 ; i < step ; i++)
+    for (int i = 0; i < step; i++)
     {
-        fast = fast -> next;
+        fast = fast->next;
     }
-    while(fast != slow)
+    while (fast != slow)
     {
-        fast = fast -> next;
-        slow = slow -> next;
+        fast = fast->next;
+        slow = slow->next;
     }
 
     return fast;
-
 }
 
 int main(void)
 {
-    Node* ListA = initList();
-    Node* ListB = initList();
+    Node *ListA = initList();
+    Node *ListB = initList();
     Node *tailA = get_tail(ListA);
-    Node *tailB = get_tail(ListB); 
-    tailA = insertTail(tailA,'l'); 
-    tailA = insertTail(tailA,'o'); 
-    tailA = insertTail(tailA,'a'); 
-    tailA = insertTail(tailA,'d'); 
-    tailB = insertTail(tailB,'b');
-    tailB = insertTail(tailB,'e');
+    Node *tailB = get_tail(ListB);
+    tailA = insertTail(tailA, 'l');
+    tailA = insertTail(tailA, 'o');
+    tailA = insertTail(tailA, 'a');
+    tailA = insertTail(tailA, 'd');
+    tailB = insertTail(tailB, 'b');
+    tailB = insertTail(tailB, 'e');
 
-    Node* nodeI = initListWithElem('i');
+    Node *nodeI = initListWithElem('i');
     tailA = initListWithNode(tailA, nodeI);
     tailB = initListWithNode(tailB, nodeI);
 
-    Node* nodeN = initListWithElem('n');
+    Node *nodeN = initListWithElem('n');
     tailA = initListWithNode(tailA, nodeN);
     tailB = initListWithNode(tailB, nodeN);
 
-    Node* nodeG = initListWithElem('g');
+    Node *nodeG = initListWithElem('g');
     tailA = initListWithNode(tailA, nodeG);
     tailB = initListWithNode(tailB, nodeG);
 
     listNode(ListA);
     listNode(ListB);
 
-    printf("%c\n",findIntersectionNode(ListA, ListB) -> data);
+    printf("%c\n", findIntersectionNode(ListA, ListB)->data);
     return 0;
 }

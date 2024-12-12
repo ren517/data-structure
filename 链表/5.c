@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <malloc.h>
-//¿ìÂýÖ¸Õë ÕÒµ½µ¹ÊýµÚk¸ö½Úµã
+//å¿«æ…¢æŒ‡é’ˆ æ‰¾åˆ°å€’æ•°ç¬¬kä¸ªèŠ‚ç‚¹
 typedef int Elemtype;
 typedef struct node
 {
@@ -8,7 +8,7 @@ typedef struct node
     struct node* next;
 }Node;
 
-//³õÊ¼»¯
+//åˆå§‹åŒ–
 Node* initList()
 {
     Node* head = (Node*)malloc(sizeof(Node));
@@ -17,7 +17,7 @@ Node* initList()
     return head;
 }
 
-//Î²²å·¨
+//å°¾æ’æ³•
 Node* get_tail(Node* L)
 {
     Node* p = L;
@@ -39,7 +39,7 @@ Node* insertTail(Node* L , Elemtype i)
     return p;
 }
 
-//±éÀú
+//éåŽ†
 void listNode(Node *L)
 {
     while(L->next != NULL)
@@ -50,7 +50,7 @@ void listNode(Node *L)
     printf("\n");
 }
 
-//¿ìÂýÖ¸Õë
+//å¿«æ…¢æŒ‡é’ˆ
 void findNodeFS(Node* L, int k)
 {
     Node* fast = L -> next;
@@ -64,7 +64,7 @@ void findNodeFS(Node* L, int k)
         fast = fast -> next;
         slow = slow -> next;
     }
-    printf("µ¹ÊýµÚ%d¸ö½ÚµãÖµÎª: %d\n",k , slow -> data);
+    printf("å€’æ•°ç¬¬%dä¸ªèŠ‚ç‚¹å€¼ä¸º: %d\n",k , slow -> data);
 }
 
 

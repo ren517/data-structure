@@ -3,47 +3,47 @@
 
 typedef int ElemType;
 
-typedef struct node{
+typedef struct node
+{
     ElemType data;
-    struct node* next;
-}Node;
+    struct node *next;
+} Node;
 
 Node *initList()
 {
-    Node *head = (Node*)malloc(sizeof(Node));
-    head ->data = 0;
-    head -> next = NULL;
+    Node *head = (Node *)malloc(sizeof(Node));
+    head->data = 0;
+    head->next = NULL;
     return head;
 }
 
-//尾插法
+// 尾插法
 
-Node * get_tail (Node *L)
+Node *get_tail(Node *L)
 {
     Node *p = L;
-    while(p->next != NULL)
+    while (p->next != NULL)
     {
-        p = p -> next;
+        p = p->next;
     }
     return p;
 }
 
-Node* insertTail(Node *L , ElemType e)
+Node *insertTail(Node *L, ElemType e)
 {
-    Node *p = (Node*)malloc(sizeof(Node));
-    p ->data =e;
-    L -> next = p;
-    p ->next =NULL;
+    Node *p = (Node *)malloc(sizeof(Node));
+    p->data = e;
+    L->next = p;
+    p->next = NULL;
     return p;
-
 }
 
-//遍历
+// 遍历
 void listNode(Node *L)
 {
-    while(L->next != NULL)
+    while (L->next != NULL)
     {
-        L = L -> next;
+        L = L->next;
         printf("%d ", L->data);
     }
     printf("\n");
@@ -53,9 +53,9 @@ int main(void)
 {
     Node *List = initList();
     Node *tail = get_tail(List);
-    tail = insertTail(tail,10);
-    tail = insertTail(tail,20);
-    tail = insertTail(tail,30);
+    tail = insertTail(tail, 10);
+    tail = insertTail(tail, 20);
+    tail = insertTail(tail, 30);
     listNode(List);
 
     return 0;
