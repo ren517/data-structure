@@ -68,10 +68,12 @@ int main(void)
 {
     BiTree p;
     createTree(&p);
+    printf("preOrder:  ");
     preOrder(p);
-    printf("\n");
+    
+    printf("\ninOrder:   ");
     inOrder(p);
-    printf("\n");
+    printf("\npostOrder: ");
     postOrder(p);
     printf("\n");
     system(".\\tree.exe");

@@ -301,4 +301,8 @@ Node* findBegin(Node* head)
 ### 2024年12月10日更新
 &emsp; 增加了栈和队列的代码
 
+### 2024年12月13日更新
+&emsp; 增加了二叉树前中后序遍历
+ps：可通过运行output的1.exe，看到我所创建的二叉树  
+## 如图：![image](picture\tree.png)
 # 代码均出自b站课程https://www.bilibili.com/video/BV1tNpbekEht/?spm_id_from=333.337.search-card.all.click
