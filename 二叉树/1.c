@@ -74,6 +74,7 @@ int main(void)
     printf("\n");
     postOrder(p);
     printf("\n");
+    system(".\\tree.exe");
 
     return 0;
 }
