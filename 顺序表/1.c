@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 #define MIXSIZE 100
-//Ë³Ğò±í¶¨Òå
+//é¡ºåºè¡¨å®šä¹‰
 typedef struct{
     int data[MIXSIZE];
     int length;
 }SeqList;
-//Ë³Ğò±í³õÊ¼»¯
+//é¡ºåºè¡¨åˆå§‹åŒ–
 void initList(SeqList *L){
     L->length = 0;
 }
@@ -15,7 +15,7 @@ int appendElem(SeqList *L,int e)
 {
     if (L -> length>= MIXSIZE)
     {
-        printf("Ë³Ğò±íÒÑÂú\n");
+        printf("é¡ºåºè¡¨å·²æ»¡\n");
         return 0;
     }
     L ->data[L->length] = e;
@@ -23,7 +23,7 @@ int appendElem(SeqList *L,int e)
     return 1;
 }
 
-//´òÓ¡Ë³Ğò±í
+//æ‰“å°é¡ºåºè¡¨
 void listElem(SeqList *L)
 {
     for(int i = 0; i < L -> length; i++)
@@ -33,18 +33,18 @@ void listElem(SeqList *L)
     printf("\n");
 }
 
-//²åÈëË³Ğò±í
+//æ’å…¥é¡ºåºè¡¨
 int insertElem(SeqList *L, int pos , int e)
 {
     if (L -> length>= MIXSIZE)
     {
-        printf("Ë³Ğò±íÒÑÂú\n");
+        printf("é¡ºåºè¡¨å·²æ»¡\n");
         return 0;
     }
 
     if(pos > L -> length || pos < 1)
     {
-        printf("²åÈë´íÎó\n");
+        printf("æ’å…¥é”™è¯¯\n");
         return 0;
     }
 
@@ -60,12 +60,12 @@ int insertElem(SeqList *L, int pos , int e)
     return 1;
 }
 /*
-//É¾³ıË³Ğò±í
+//åˆ é™¤é¡ºåºè¡¨
 int deleteElem(SeqList *L, int pos)
 {
     if(pos > L -> length || pos < 1)
     {
-        printf("É¾³ı´íÎó\n");
+        printf("åˆ é™¤é”™è¯¯\n");
         return 0;
     }
     if(pos <= L ->length)
@@ -79,16 +79,16 @@ int deleteElem(SeqList *L, int pos)
     return 1;
 }
 */
-//ÒÔÉÏÎª×Ô¼ºĞ´£¬ÄÜÊµÏÖÉ¾³ıÊı¾İ¹¦ÄÜ£¬È±µã£º²»ÄÜÈÃÓÃ»§ÖªµÀÉ¾³ıÄÚÈİ
+//ä»¥ä¸Šä¸ºè‡ªå·±å†™ï¼Œèƒ½å®ç°åˆ é™¤æ•°æ®åŠŸèƒ½ï¼Œç¼ºç‚¹ï¼šä¸èƒ½è®©ç”¨æˆ·çŸ¥é“åˆ é™¤å†…å®¹
 
 int deleteElem(SeqList *L, int pos , int *e)
 {
     if(pos > L -> length || pos < 1)
     {
-        printf("É¾³ı´íÎó\n");
+        printf("åˆ é™¤é”™è¯¯\n");
         return 0;
     }
-    *e = L ->data [pos-1];//ÓÃÖ¸ÕëĞŞ¸ÄdelDataµÄµØÖ·£¬¼ä½Ó¸ÄÊı¾İ
+    *e = L ->data [pos-1];//ç”¨æŒ‡é’ˆä¿®æ”¹delDataçš„åœ°å€ï¼Œé—´æ¥æ”¹æ•°æ®
     if(pos <= L ->length)
     {
         for(int i = pos-1 ; i < L ->length ; i++)
@@ -116,8 +116,8 @@ int main(void){
 
     SeqList list;
     initList(&list);
-    printf("³õÊ¼»¯³É¹¦£¬Ä¿Ç°³¤¶ÈÕ¼ÓÃ%d\n",list.length);
-    printf("Ä¿Ç°Õ¼ÓÃÄÚ´æ%zu×Ö½Ú\n",sizeof(list.data));
+    printf("åˆå§‹åŒ–æˆåŠŸï¼Œç›®å‰é•¿åº¦å ç”¨%d\n",list.length);
+    printf("ç›®å‰å ç”¨å†…å­˜%zuå­—èŠ‚\n",sizeof(list.data));
 
     appendElem(&list,88);
     appendElem(&list,82);
@@ -130,8 +130,8 @@ int main(void){
     listElem(&list);
     int delData;
     deleteElem(&list,3,&delData);
-    printf("±»É¾³ıÊı¾İÎª%d\n",delData);
+    printf("è¢«åˆ é™¤æ•°æ®ä¸º%d\n",delData);
     listElem(&list);
-    printf("60ÔÚµÚ%dÎ»ÉÏ\n",findElem(&list,60));
+    printf("60åœ¨ç¬¬%dä½ä¸Š\n",findElem(&list,60));
     return 0;
 }
