@@ -5,6 +5,9 @@ typedef char VertexType; // 顶点
 
 #define MAXSIZE 100
 int visited[MAXSIZE];
+int front = 0;
+int rear = 0;
+int queue[MAXSIZE];
 
 typedef struct
 {
@@ -66,18 +69,30 @@ void create_graph(Mat_Grph *G)
     }
 }
 
-void dfs(Mat_Grph G, int i)
+void bfs(Mat_Grph G)
 {
+    int i = 0;
     visited[i] = 1;
     printf("%c\n", G.vertex[i]);
-    for (int j = 0; j < G.vertex_num; j++)
+    queue[rear] = i;
+    rear++;
+    while (front != rear)
     {
-        if (G.arc[i][j] == 1 && visited[j] == 0)
+        i = queue[front];
+        front++;
+        for (int j = 0; j < G.vertex_num; j++)
         {
-            dfs(G, j);
+            if (G.arc[i][j] == 1 && visited[j] == 0)
+            {
+                visited[j] = 1;
+                printf("%c\n", G.vertex[j]);
+                queue[rear] = j;
+                rear++;
+            }
         }
     }
 }
+
 int main(void)
 {
     Mat_Grph G;
@@ -86,7 +101,6 @@ int main(void)
     {
         visited[i] = 0;
     }
-    dfs(G, 0);
-
+    bfs(G);
     return 0;
 }
