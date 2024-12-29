@@ -5,7 +5,7 @@ typedef int EdgeType;
 typedef char VertexType; // 顶点
 
 #define MAXSIZE 100
-#define MAX 0X10000000
+#define MAX 0X7fffffff
 #define MAXEDGE 200
 
 typedef struct
@@ -124,6 +124,7 @@ int find(int *parent, int index)
     }
     return index;
 }
+
 void Kruskal(Mat_Grph G)
 {
     Edge edges[MAXEDGE];
