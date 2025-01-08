@@ -306,3 +306,14 @@ Node* findBegin(Node* head)
 ps：可通过运行output的1.exe，看到我所创建的二叉树  
 ## 如图：![image](/picture/tree.png)
 # 代码均出自b站课程https://www.bilibili.com/video/BV1tNpbekEht/?spm_id_from=333.337.search-card.all.click
+
+###### 人工智能大战的一天，书上代码是错的，找了3个ai改，感觉kim>腾讯>豆包
+
+##2025.1.8更新大数的表示
+好久没写md了，更新一下test/1.c
+```
+strcpy(num->num, "000123456789987654321"); // 复制字符串到分配的内存
+```
+注意字符串的写入方式
+动态内存分配的字符串，需要用strcpy函数，不能直接赋值，否则会报错
+动态内存用完后free掉，否则会内存泄漏
