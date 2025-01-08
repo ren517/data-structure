@@ -100,5 +100,6 @@ int main(void)
     tail->next = three;
     Node *p = findBegin(List);
     printf("链表中环的开始位置为：%d\n", p->data);
+    listNode(List);
     return 0;
 }

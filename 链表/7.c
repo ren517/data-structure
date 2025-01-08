@@ -1,4 +1,4 @@
-// 利用空间换时间，删除绝对值相同的元素
+// 鍒╃敤绌洪棿鎹㈡椂闂达紝鍒犻櫎缁濆鍊肩浉鍚岀殑鍏冪礌
 #include <stdio.h>
 #include <malloc.h>
 #include <math.h>
@@ -38,11 +38,11 @@ Node *insertTail(Node *L, ElemType e)
     return p;
 }
 
-// 删除绝对值相同的节点
+// 鍒犻櫎缁濆鍊肩浉鍚岀殑鑺傜偣
 void removeNode(Node *L, int n)
 {
     Node *p = L;
-    int index; // 用作数组下标
+    int index; // 鐢ㄤ綔鏁扮粍涓嬫爣
     int *q = (int *)malloc(sizeof(int) * (n + 1));
 
     for (int i = 0; i < n + 1; i++)
@@ -70,7 +70,7 @@ void removeNode(Node *L, int n)
     }
 }
 
-// 遍历
+// 閬嶅巻
 void listNode(Node *L)
 {
     while (L->next != NULL)
