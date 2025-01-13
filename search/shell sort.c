@@ -12,7 +12,7 @@ void InsertSearch(int *arr, int n)
             temp = arr[i];
             for (j = i; j >= step && arr[j - step] > temp; j -= step)
             {
-                arr[j] = arr[j - step]; // 1 2 3 4 5 6 0 所有元素向前移动
+                arr[j] = arr[j - step];
             }
             arr[j] = temp;
         }
