@@ -317,3 +317,21 @@ strcpy(num->num, "000123456789987654321"); // 复制字符串到分配的内存
 注意字符串的写入方式  
 动态内存分配的字符串，需要用strcpy函数，不能直接赋值，否则会报错  
 动态内存用完后free掉，否则会内存泄漏
+
+### 堆排序的图
+![image](/picture/heap.png)
+
+### DFS,BFS的图
+![image](/picture/graph.png)
+
+注：  
+交换数组元素时要用int temp，不能用int *temp交换地址
+```
+void swap(int *p, int *q)
+{
+    int temp;
+    temp = *p;
+    *p = *q;
+    *q = temp;
+}
+```

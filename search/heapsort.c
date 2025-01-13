@@ -23,6 +23,7 @@ void swap(int *p, int *q)
     *p = *q;
     *q = temp;
 }
+
 // 维护堆的性质(下沉)
 // n为数组个数
 // i为父节点
@@ -69,6 +70,7 @@ void print(int arr[])
         printf("%d ", arr[i]);
     }
 }
+
 int main(void)
 {
     int arr[10] = {8, 7, 10, 12, 13, 15, 14, 16, 11, 19};
