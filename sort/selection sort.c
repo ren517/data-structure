@@ -2,39 +2,39 @@
 int main(void)
 {
     int arr[10];
-    int i , j;
+    int i, j;
 
-    for(i = 0 ; i < 10 ; i++)
+    for (i = 0; i < 10; i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d", &arr[i]);
     }
 
     int temp;
     int min = 0;
 
-    for(i = 0 ; i < 10 ; i++)
-    {    
+    for (i = 0; i < 10; i++)
+    {
         min = i;
 
-        for(j = i ; j < 10 ; j++)
+        for (j = i; j < 10; j++)
         {
-            if(arr[min] > arr[j])
+            if (arr[min] > arr[j])
             {
-                //½«min¸ü¸Ä£¬²¢ÇÒ¼ÌĞøÑ°ÕÒÊı×éÖĞÓĞÃ»ÓĞ¸üĞ¡µÄÖµ
+                // å°†minæ›´æ”¹ï¼Œå¹¶ä¸”ç»§ç»­å¯»æ‰¾æ•°ç»„ä¸­æœ‰æ²¡æœ‰æ›´å°çš„å€¼
                 min = j;
             }
         }
-        //½»»»£¬°´Ë³ĞòÅÅÁĞµÚÒ»Ğ¡£¬µÚ¶şĞ¡¡­¡­
+        // äº¤æ¢ï¼ŒæŒ‰é¡ºåºæ’åˆ—ç¬¬ä¸€å°ï¼Œç¬¬äºŒå°â€¦â€¦
         temp = arr[min];
         arr[min] = arr[i];
-        arr [i] = temp;
+        arr[i] = temp;
     }
-    
-    //±éÀúÊä³ö
-    for(i = 0 ; i < 10 ; i++)
+
+    // éå†è¾“å‡º
+    for (i = 0; i < 10; i++)
     {
-        printf("%d ",arr[i]);
-    }   
+        printf("%d ", arr[i]);
+    }
 
     return 0;
 }
