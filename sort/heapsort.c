@@ -47,7 +47,7 @@ void heapity(int arr[], int n, int i)
     }
 }
 
-void heap_spot(int arr[], int n)
+void heap_sort(int arr[], int n)
 {
     // 建堆
     int i;
@@ -74,7 +74,7 @@ void print(int arr[])
 int main(void)
 {
     int arr[10] = {8, 7, 10, 12, 13, 15, 14, 16, 11, 19};
-    heap_spot(arr, 10);
+    heap_sort(arr, 10);
     print(arr);
 
     return 0;
