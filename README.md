@@ -172,85 +172,7 @@ void removeNode(Node* L, int n)
                 p -> next = temp -> next;
                 free(temp);
             }
-        }    
-
-}
-```
-### &emsp;8.c 反转链表
-
-```
-Node* reserveList(Node* head)
-{
-    Node* first = NULL;
-    Node* second = head -> next;
-    Node* third;
-    while(second != NULL)
-    {
-        third = second -> next;
-        second -> next = first;
-        first = second;//first = first -> next
-        second = third;//second = second -> next
-    }
-    Node* hd = initList();
-    hd -> next = first;
-    return hd;
-}
-```
-### &emsp;9.c 快慢指针法删除中间节点
-
-```
-void delMiddleNode(Node* head)
-{
-    Node* fast = head -> next;
-    Node* slow = head;
-
-    while(fast != NULL && fast -> next != NULL)
-    {
-        fast = fast -> next -> next;
-        slow = slow -> next;
-    } 
-    Node* q = slow -> next;
-    slow -> next = q -> next;
-    free(q);
-}
-```
-### &emsp;10.c 重组链表
-
-```
-void reOrderList(Node* head)
-{
-    Node* fast = head -> next;
-    Node* slow = head;
-
-    while(fast != NULL && fast -> next != NULL)
-    {
-        fast = fast -> next -> next;
-        slow = slow -> next;
-    } 
-
-    Node* first = NULL;
-    Node* second = slow -> next;
-    slow -> next = NULL;//打断链表
-    Node* third = NULL;
-    while(second != NULL)
-    {
-        third = second -> next;
-        second -> next = first;
-        first = second;
-        second = third; 
-    }
-
-    Node* p1 = head -> next;
-    Node* q1 = first;
-    Node* p2 , *q2;
-    
-    while(p1 != NULL && q1 != NULL)
-    {
-        p2 = p1 -> next;
-        q2 = q1 -> next;
-
-        p1 -> next = q1;
-        q1 -> next = p2;
+        }    void create_graph(Mat_Grph *G)
 
         p1 = p2;
         q1 = q2;
@@ -299,33 +221,42 @@ Node* findBegin(Node* head)
 ```
 
 ### 2024年12月10日更新
+
 &emsp; 增加了栈和队列的代码
 
 ### 2024年12月13日更新
+
 &emsp; 增加了二叉树前中后序遍历
 ps：可通过运行output的1.exe，看到我所创建的二叉树  
+
 ## 如图：![image](/picture/tree.png)
-# 代码均出自b站课程https://www.bilibili.com/video/BV1tNpbekEht/?spm_id_from=333.337.search-card.all.click
+
+# 代码均出自b站课程<https://www.bilibili.com/video/BV1tNpbekEht/?spm_id_from=333.337.search-card.all.click>
 
 ###### 人工智能大战的一天，书上代码是错的，找了3个ai改，感觉kim>腾讯>豆包
 
-##2025.1.8更新大数的表示
+## 2025.1.8更新大数的表示
 好久没写md了，更新一下test/1.c
+
 ```
 strcpy(num->num, "000123456789987654321"); // 复制字符串到分配的内存
 ```
+
 注意字符串的写入方式  
 动态内存分配的字符串，需要用strcpy函数，不能直接赋值，否则会报错  
 动态内存用完后free掉，否则会内存泄漏
 
 ### 堆排序的图
+
 ![image](/picture/heap.png)
 
 ### DFS,BFS的图
+
 ![image](/picture/graph.png)
 
 注：  
 交换数组元素时要用int temp，不能用int *temp交换地址
+
 ```
 void swap(int *p, int *q)
 {
@@ -335,3 +266,7 @@ void swap(int *p, int *q)
     *q = temp;
 }
 ```
+
+## 2025.1.17 复习Dijkstra，学习Fload
+&emsp;通过学习线性代数，对于图的理解更加深入<br>
+&emsp;更能理解查找最短路径的方式
