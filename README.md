@@ -270,3 +270,6 @@ void swap(int *p, int *q)
 ## 2025.1.17 复习Dijkstra，学习Fload
 &emsp;通过学习线性代数，对于图的理解更加深入<br>
 &emsp;更能理解查找最短路径的方式
+
+### Dijkstra和Fload的图
+![image](/picture/weighted-graph.png)
