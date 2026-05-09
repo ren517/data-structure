@@ -252,7 +252,7 @@ strcpy(num->num, "000123456789987654321"); // 复制字符串到分配的内存
 
 ### DFS,BFS的图
 
-![image](/picture/graph.png)
+![image](/picture/DFS，BFS.png)
 
 注：  
 交换数组元素时要用int temp，不能用int *temp交换地址
